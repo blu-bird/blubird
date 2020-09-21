@@ -1,0 +1,188 @@
+\ProvidesPackage{blubird}[2018/09/18]
+
+\newif\ifbirddate      \birddatetrue
+\newif\ifbirdserif     \birdseriffalse
+\newif\ifbirdfancy     \birdfancytrue
+\newif\ifbirdcolor     \birdcolortrue
+\newif\ifbirdcode      \birdcodefalse
+
+\DeclareOption{nodate}{\birddatefalse}
+\DeclareOption{nosans}{\birdseriftrue}
+\DeclareOption{nofancy}{\birdfancyfalse}
+\DeclareOption{nocolor}{\birdcolorfalse}
+\DeclareOption{code}{\birdcodetrue}
+
+\ProcessOptions\relax
+
+\usepackage{blubase}
+\KOMAoptions{fontsize = 10pt, paper = letter, DIV = 20}
+\KOMAoptions{numbers = noendperiod}
+
+\usepackage[nodisplayskipstretch, onehalfspacing]{setspace}
+
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\usepackage{enumitem}
+\usepackage{multicol}
+
+\usepackage{hyperref}
+\usepackage{cleveref} % must be loaded after hyperref
+
+\usepackage{float}
+\usepackage{endnotes}
+\usepackage[obeyFinal, textsize = scriptsize]{todonotes}
+
+\usepackage{thmtools}
+\PassOptionsToPackage{svgnames, dvipsnames, usenames}{xcolor}
+\usepackage[framemethod = TikZ]{mdframed}
+\usepackage{silence} % for suppressing warnings
+
+% SETUP
+
+\author{Bryan Lu}
+
+\ifbirddate\else
+	\date{~\vspace{-5ex}}
+\fi
+
+\ifbirdserif
+    \addtokomafont{disposition}{\rmfamily}
+\else
+	\renewcommand{\familydefault}{\sfdefault}
+\fi
+
+\ifbirdcolor \else
+	\renewcommand{\vocab}[1]{\textbf{\boldmath #1}}
+\fi
+
+\makeatletter
+\patchcmd{\@maketitle}{\huge}{\Large}{}{}
+\makeatother
+
+\setkomafont{author}{\normalsize\scshape}
+\setkomafont{date}{\normalsize}
+
+\RedeclareSectionCommand[
+	beforeskip = .4\baselineskip
+]{paragraph}
+
+\ifbirdfancy
+	\usepackage{scrlayer-scrpage}
+	\setkomafont{pageheadfoot}{\normalcolor}
+\fi
+
+% Section heading numbers in the margin
+\renewcommand{\sectionlinesformat}[4]{\makebox[0pt][r]{#3}#4}
+
+\allowdisplaybreaks
+\AtBeginDocument{
+	\setlength{\belowdisplayskip}{0.5em}
+	\setlength{\belowdisplayshortskip}{0.2em}
+	\setlength{\abovedisplayskip}{0.5em}
+	\setlength{\abovedisplayshortskip}{0.2em}
+}
+
+% Make itemize bullets smaller
+\setlist{noitemsep, topsep = 0.4em}
+\renewcommand\labelitemi{\raisebox{0.15em}{\tiny$\bullet$}}
+\renewcommand{\arraystretch}{0.8}
+
+\mdfsetup{
+	roundcorner = 2pt,
+	linewidth = 1pt,
+	innertopmargin = 0.5em,
+	innerbottommargin = 1em,
+}
+
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\ifbirdcolor
+	\colorlet{defforeground}{red!70!black}
+	\colorlet{defbackground}{red!5}
+	\colorlet{thmforeground}{blue}
+	\colorlet{thmbackground}{blue!5}
+	\colorlet{exforeground}{green!50!black}
+	\colorlet{exbackground}{green!5}
+\else
+	\colorlet{defforeground}{black}
+	\colorlet{defbackground}{white}
+	\colorlet{thmforeground}{black}
+	\colorlet{thmbackground}{white}
+	\colorlet{exforeground}{black}
+	\colorlet{exbackground}{white}
+\fi
+
+\mdfdefinestyle{mdredbox}{
+	linecolor = defforeground,
+	backgroundcolor = defbackground,
+}
+\declaretheoremstyle[
+	headfont = \sffamily\bfseries\color{defforeground},
+	mdframed = {style = mdredbox},
+	headpunct = {\\[0.4pt]},
+	postheadspace = {0pt}
+]{defbox}
+
+\mdfdefinestyle{mdbluebox}{
+	linecolor = thmforeground,
+	backgroundcolor = thmbackground,
+}
+\declaretheoremstyle[
+	headfont = \sffamily\bfseries\color{thmforeground},
+	mdframed = {style = mdbluebox},
+	headpunct = {\\[3pt]},
+	postheadspace = {0pt}
+]{thmbox}
+
+\mdfdefinestyle{mdgreenbox}{
+	linecolor = exforeground,
+	backgroundcolor = exbackground,
+}
+\declaretheoremstyle[
+	headfont = \sffamily\bfseries\color{exforeground},
+	mdframed = {style = mdgreenbox},
+	headpunct = {\\[3pt]},
+	postheadspace = {0pt},
+	preheadhook = {~\vspace{-6pt}},
+]{exbox}
+
+\declaretheoremstyle[
+	bodyfont = \normalfont
+]{plain}
+
+\newcommand{\boxhack}{~\vspace{-2em}}
+
+\declaretheorem[style = thmbox, name = Theorem]{theorem}
+\declaretheorem[style = thmbox, name = Lemma, sibling = theorem]{lemma}
+\declaretheorem[style = thmbox, name = Proposition, sibling = theorem]{proposition}
+\declaretheorem[style = thmbox, name = Corollary, sibling = theorem]{corollary}
+\declaretheorem[style = thmbox, name = Conjecture, sibling = theorem]{conjecture}
+\declaretheorem[style = thmbox, name = Algorithm, sibling = theorem]{algorithm}
+
+\declaretheorem[style = defbox, name = Definition, sibling = theorem]{definition}
+\declaretheorem[style = defbox, name = Fact, sibling = theorem]{fact}
+
+\declaretheorem[style = plain, name = Exercise, numbered = no]{exercise}
+\declaretheorem[style = plain, name = Problem, numbered = no]{problem}
+\declaretheorem[style = plain, name = Question, numbered = no]{question}
+\declaretheorem[style = plain, name = Answer, numbered = no]{answer}
+\declaretheorem[style = plain, name = Remark, numbered = no]{remark}
+
+\declaretheorem[style = plain, name = Case, numberwithin = theorem]{case}
+\declaretheorem[style = plain, name = Claim, numberwithin = theorem]{claim}
+	
+\declaretheorem[style = exbox, name = Example, sibling = theorem]{example}
+\declaretheorem[style = exbox, name = Example, numbered = no]{example*}
+
+% Suppress mdframed warnings
+\WarningFilter{mdframed}{You got a bad break} % 'Cause you've had a bad day...
+
+\ifbirdcode
+	\usepackage{minted}
+	\setminted{linenos = true, breaklines = true, tabsize = 4}
+
+	\usepackage{accsupp} % prevents selection of line numbers
+	\let\oldfancyVerbLine\theFancyVerbLine
+	\renewcommand{\theFancyVerbLine}{\BeginAccSupp{ActualText={}}\oldfancyVerbLine\EndAccSupp{}}
+\fi

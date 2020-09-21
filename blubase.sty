@@ -1,0 +1,203 @@
+\ProvidesPackage{blubase}[2020/09/11]
+
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{mathtools}
+\usepackage{nccmath}
+\usepackage{array}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{makecell}
+\usepackage{accents}
+
+\usepackage[inline]{asymptote}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+\usepackage{mathrsfs}
+\usepackage[T1]{fontenc}
+
+\usepackage{etoolbox}
+\usepackage{adjustbox}
+
+% makes \oint circle smaller
+\let\origointop\ointop
+\usepackage{esint}
+\let\ointop\origointop
+
+% Make \bfseries include \boldmath
+\makeatletter
+\g@addto@macro\bfseries{\boldmath}
+\makeatother
+
+% Macros
+\newcommand{\NewPage}{\vfill\eject}
+\newcommand{\ds}{\displaystyle}
+
+% Emphasizing
+\newcommand{\vocab}[1]{\textbf{\color{blue}\boldmath #1}}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\ul}[1]{\underline{#1}}
+
+% Syntactically-named delimiters
+\DeclarePairedDelimiter{\braces}{\{}{\}}
+\DeclarePairedDelimiter{\parens}{(}{)}
+\DeclarePairedDelimiter{\brackets}{[}{]}
+\DeclarePairedDelimiter{\angles}{\langle}{\rangle}
+\DeclarePairedDelimiter{\verts}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\Verts}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+% Semantically-named delimiters
+\newcommand{\set}{\braces}
+\newcommand{\abs}{\verts}
+\newcommand{\size}{\verts}
+\newcommand{\norm}{\Verts}
+\newcommand{\tuple}{\angles}
+
+% Symbols
+\newcommand{\eps}{\varepsilon}
+\newcommand{\nullset}{\varnothing}
+\newcommand{\st}{\; \middle\vert \;}
+\newcommand{\divides}{\; \middle\vert \;}
+
+% Basic Math
+\newcommand{\half}{\ensuremath{\frac{1}{2}}}
+\newcommand{\cbrt}[1]{\sqrt[3]{#1}}
+
+% Sets
+\newcommand{\FF}{\mathbb F}
+\newcommand{\NN}{\mathbb N}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\HH}{\mathbb H}
+\newcommand{\GG}{\mathbb G} %PUMaC 2018 Power
+\newcommand{\GGtil}{\Tilde{\mathbb G}} %PUMaC 2018 Power
+
+% Complex
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\DeclareMathOperator{\cis}{cis}
+\newcommand{\conj}[1]{\ol{#1}}
+\DeclareMathOperator*{\Arg}{Arg}
+\DeclareMathOperator*{\Log}{Log}
+
+% Combinatorics / Statistics
+\newcommand{\EE}{\mathbb E}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\fallingfact}[2]{#1^{\underline{#2}}}
+\newcommand{\ffact}[2]{\fallingfact{#1}{#2}}
+\newcommand{\risingfact}[2]{#1^{\overline{#2}}}
+\newcommand{\rfact}[2]{\risingfact{#1}{#2}}
+\newcommand{\permutation}[2]{P^{#1}_{#2}}
+\newcommand{\perm}[2]{\permuation{#1}{#2}}
+\newcommand{\combination}[2]{C^{#1}_{#2}}
+\newcommand{\comb}[2]{\combination{#1}{#2}}
+\newcommand{\stirlingone}[2]{\genfrac[]{0pt}{1}{#1}{#2}}
+\newcommand{\stiri}[2]{\stirlingone{#1}{#2}}
+\newcommand{\dstirlingone}[2]{\genfrac[]{0pt}{0}{#1}{#2}}
+\newcommand{\dstiri}[2]{\dstirlingone{#1}{#2}}
+\newcommand{\stirlingtwo}[2]{\genfrac\{\}{0pt}{1}{#1}{#2}}
+\newcommand{\stirii}[2]{\stirlingtwo{#1}{#2}}
+\newcommand{\dstirlingtwo}[2]{\genfrac\{\}{0pt}{0}{#1}{#2}}
+\newcommand{\dstirii}[2]{\dstirlingtwo{#1}{#2}}
+\DeclareMathOperator{\Var}{Var}
+\newcommand{\expval}[1]{\left\langle #1 \right\rangle}
+\newcommand{\snb}[2]{\left(\binom{#1}{#2}\right)}
+\newcommand{\tsnb}[2]{(\binom{#1}{#2})}
+\newcommand{\multiset}[2]{\snb{#1}{#2}}
+
+% Geometry
+\newcommand{\dg}{^\circ}
+\newcommand{\seg}[1]{\overrightarrow{#1}}
+\newcommand{\ray}[1]{\overrightarrow{#1}}
+\newcommand{\dang}{\measuredangle}
+
+% Number Theory
+\newcommand{\Mod}[1]{\ (\text{mod}\ #1)}
+\renewcommand{\mod}[1]{\ \text{mod}\ #1}
+\DeclareMathOperator*{\lcm}{lcm}
+
+% MATH 2230 Notation
+\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newcommand{\inter}[1]{\accentset{\circ}{#1}} %interior
+\newcommand{\closu}[1]{\overline{#1}} %closure
+\newcommand{\bound}[1]{\partial #1} %boundary
+\newcommand{\pop}[1]{\mathcal{D}_{#1}}
+\newcommand{\jacob}[1]{\mathcal{J}_{#1}}
+\renewcommand{\bf}[1]{\mathbf{#1}}
+
+% Calculus
+\newcommand{\dv}[2]{\frac{d #1}{d #2}}
+\newcommand{\ddv}[2]{\frac{d^2 #1}{d #2^2}}
+\newcommand{\dnv}[3]{\frac{d^{#3} #1}{d #2^{#3}}}
+\newcommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pddv}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\pdnv}[3]{\frac{\partial^{#3} #1}{\partial #2^{#3}}}
+\newcommand{\mpddv}[3]{\frac{\partial^2 #1}{\partial #2 \, \partial #3}}
+\newcommand{\pdvc}[3]{\left(\pdv{#1}{#2}\right)_{#3}}
+\newcommand{\idv}[2]{\frac{\delta #1}{d #2}}
+\newcommand{\idvc}[3]{\left(\idv{#1}{#2} \right)_{#3}}
+
+% Operators
+\newcommand{\divergence}[1]{\nabla \cdot #1}
+\renewcommand{\div}[1]{\divergence #1}
+\newcommand{\curl}[1]{\nabla \times #1}
+\newcommand{\gradient}[1]{\nabla #1}
+\newcommand{\grad}[1]{\gradient #1}
+\newcommand{\laplacian}[1]{\nabla^2 #1}
+\newcommand{\adj}[1]{#1^{\dagger}}
+\DeclareMathOperator{\tcurl}{\operatorname{curl}}
+\DeclareMathOperator{\tdiv}{\operatorname{div}}
+\DeclareMathOperator{\tgrad}{\operatorname{grad}}
+
+% Algebra
+\DeclareMathOperator{\ord}{ord}
+\newcommand{\iso}{\cong}
+
+% Trigonometry
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\sinc}{sinc}
+
+% Physics
+%\renewcommand{\hat}{\mathbf}
+\newcommand{\lagrangian}{\mathcal{L}}
+\newcommand{\lagr}{\lagrangian}
+\newcommand{\emf}{\mathcal{E}}
+\newcommand{\order}{\mathcal{O}}
+\newcommand{\hamiltonian}{\mathcal{H}}
+\newcommand{\ham}{\hamiltonian}
+\newcommand{\rot}[2]{R_{\hat{#1}} \left( #2 \right)}
+
+%Dirac Notation
+\newcommand{\ket}[1]{\left| #1 \right\rangle}
+\newcommand{\bra}[1]{\left\langle #1 \right|}
+\newcommand{\innerproduct}[2]{\left\langle #1 \middle| #2 \right\rangle}
+\newcommand{\braket}[2]{\innerproduct{#1}{#2}}
+\newcommand{\ip}[2]{\innerproduct{#1}{#2}}
+\newcommand{\innerproductoperator}[3]{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}
+\newcommand{\ipo}[3]{\innerproductoperator{#1}{#2}{#3}}
+\newcommand{\outerproduct}[2]{\left| #1 \right\rangle \left\langle #2 \right|}
+\newcommand{\dyad}[2]{\outerproduct{#1}{#2}}
+\newcommand{\op}[2]{\outerproduct{#1}{#2}}
+\newcommand{\ketbra}[2]{\outerproduct{#1}{#2}}
+\newcommand{\proj}[2]{\text{proj}_{\ket{#1}} \ket{#2}}
+\newcommand{\projop}[1]{P_{\ket{#1}}}
+\makeatletter
+\newcommand{\projopset}[2]{P_{\{\ket{#1}, \ket{#2}\checknextargP\}}}
+\newcommand{\checknextargP}{\@ifnextchar\bgroup{\gobblenextargP}}
+\newcommand{\gobblenextargP}[1]{, \ket{#1}\@ifnextchar\bgroup{\gobblenextargP}}
+
+%Commutators
+\newcommand{\commutator}[2]{\left[#1, #2\right]}
+\newcommand{\comm}[2]{\commutator{#1}{#2}}
+\newcommand{\anticommutator}[2]{\left{#1, #2\right}}
+\newcommand{\anticomm}[2]{\andicommutator{#1}{#2}}
