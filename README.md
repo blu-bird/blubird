@@ -11,6 +11,8 @@ Bryan Lu's LaTeX Package (and other stuff)
 
 This is not meant to be a complete listing; but the following describes at a high level what kinds of commands are included in this package: 
 
+**BIG NOTE: Redefinition of `\bf`:** You shouldn't be using this anyway, so I've repurposed it to be the shorthand for `\mathbf`. 
+
 ### Sets of Numbers
 All common sets of numbers (the naturals, integers, rationals, reals, complex, etc.) have macros. For example, the integers are `\ZZ`. 
 
