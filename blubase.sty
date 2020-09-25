@@ -76,6 +76,10 @@
 \newcommand{\HH}{\mathbb H}
 \newcommand{\GG}{\mathbb G} %PUMaC 2018 Power
 \newcommand{\GGtil}{\Tilde{\mathbb G}} %PUMaC 2018 Power
+\newcommand{\inter}[1]{\accentset{\circ}{#1}} %interior
+\newcommand{\closu}[1]{\overline{#1}} %closure
+\newcommand{\bound}[1]{\partial #1} %boundary
+\newcommand{\id}{\mathrm{id}}
 
 % Complex
 \DeclareMathOperator*{\argmax}{argmax}
@@ -123,15 +127,9 @@
 \renewcommand{\mod}[1]{\ \text{mod}\ #1}
 \DeclareMathOperator*{\lcm}{lcm}
 
-% MATH 2230 Notation
+% Linear Algebra (MATH 2230 Notation)
 \newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
 \newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}
-\newcommand{\inter}[1]{\accentset{\circ}{#1}} %interior
-\newcommand{\closu}[1]{\overline{#1}} %closure
-\newcommand{\bound}[1]{\partial #1} %boundary
-\newcommand{\pop}[1]{\mathcal{D}_{#1}}
-\newcommand{\jacob}{\mathcal{J}}
-\renewcommand{\bf}[1]{\mathbf{#1}}
 
 % Calculus
 \newcommand{\dv}[2]{\frac{d #1}{d #2}}
@@ -162,10 +160,10 @@
 \newcommand{\iso}{\cong}
 
 % Trigonometry
-\DeclareMathOperator{\arcsec}{arcsec}
-\DeclareMathOperator{\arccot}{arccot}
-\DeclareMathOperator{\arccsc}{arccsc}
-\DeclareMathOperator{\sinc}{sinc}
+\newcommand{\arcsec}{\mathrm{arcsec}}
+\newcommand{\arccot}{\mathrm{arccot}}
+\newcommand{\arccsc}{\mathrm{arccsc}}
+\newcommand{\sinc}{\mathrm{sinc}}
 
 % Physics
 %\renewcommand{\hat}{\mathbf}
