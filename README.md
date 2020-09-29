@@ -32,4 +32,4 @@ Has stuff for the Lagrangian and Hamiltonian and other things in the cool, swirl
 Supports all that jazz, from my (incomplete) transcription of Quantum/Electrodynamics (2018-2019) class notes. 
 
 ### MATH 2230 Notation
-Any other notation that's not the above stuff that appears in Hubbard (5th ed.) from Chapters 0-1.7 is in here. I prefer `\varepsilon` to `\epsilon`, so the former is abbreviated as `\eps`. 
+Any other notation that's not the above stuff that appears in Hubbard (5th ed.) from Chapters 0-1 is in here. I prefer `\varepsilon` to `\epsilon`, so the former is abbreviated as `\eps`. 
