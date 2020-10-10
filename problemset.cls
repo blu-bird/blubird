@@ -55,7 +55,7 @@
 \fancyhead{}
 \fancyfoot{}
 \fancyfoot[C] {\thepage}
-\fancyhead[L]{\@coursename \, -- Problem Set \@hwNo}
+\fancyhead[L]{\@coursename \ -- Problem Set \@hwNo}
 \fancyhead[R]{\@studname}
 \renewcommand{\footrulewidth}{0.4 pt}
 
@@ -79,7 +79,7 @@
 %	\fi
 %}
 
-\title{\vspace{-2cm}\@coursename -- Problem Set \@hwNo}
+\title{\vspace{-2cm}\@coursename \ -- Problem Set \@hwNo}
 \author{\@studname}
 \date{\@duedate}
 
