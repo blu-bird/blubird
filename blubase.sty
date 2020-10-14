@@ -124,7 +124,8 @@
 \renewcommand{\mod}[1]{\ \text{mod}\ #1}
 \DeclareMathOperator*{\lcm}{lcm}
 
-% Linear Algebra (MATH 2230 Notation)
+% MATH 2230 Notation
+% Chapter 1
 \newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
 \newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}	
 \newcommand{\tbmat}[1]{\begin{bsmallmatrix}#1\end{bsmallmatrix}}
@@ -136,6 +137,20 @@
 \newcommand{\jacob}[1]{\left[\mathcal{J}#1\right]}	
 \newcommand{\deriv}[1]{\left[\mathcal{D}#1\right]}
 \renewcommand{\bf}[1]{\mathbf{#1}}
+
+% Chapter 2
+\newenvironment{apmatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+\newenvironment{abmatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+\newcommand{\apmat}[2]{\begin{apmatrix}{#1} #2 \end{apmatrix}}
+\newcommand{\abmat}[2]{\begin{abmatrix}{#1} #2 \end{abmatrix}}
 
 % Calculus
 \newcommand{\dv}[2]{\frac{d #1}{d #2}}
