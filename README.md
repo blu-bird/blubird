@@ -38,6 +38,6 @@ Any other notation that's not the above stuff that appears in Hubbard (5th ed.) 
 * Chapter 1: 
   * The Jacobian and derivative of a function as in 1.7 are automatically in brackets to indicate they are matrices. Uses `mathcal` font.
   * Interior, closure, and boundary symbols added. 
-  * Abbreviations for starting/ending matrices. 
+  * Abbreviations for starting/ending matrices. Separate commands for inline matrices and display-style matrices. 
 * Chapter 2: 
   * Augmented matrices (both parenthesis and bracket delimiters) added
