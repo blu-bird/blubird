@@ -32,4 +32,12 @@ Has stuff for the Lagrangian and Hamiltonian and other things in the cool, swirl
 Supports all that jazz, from my (incomplete) transcription of Quantum/Electrodynamics (2018-2019) class notes. 
 
 ### MATH 2230 Notation
-Any other notation that's not the above stuff that appears in Hubbard (5th ed.) from Chapters 0-1 is in here. I prefer `\varepsilon` to `\epsilon`, so the former is abbreviated as `\eps`. 
+Any other notation that's not the above stuff that appears in Hubbard (5th ed.) from Chapters 0-2 is in here. Some notes: 
+* Chapter 0/Other: 
+  * I prefer `\varepsilon` to `\epsilon`, so the former is abbreviated as `\eps`.
+* Chapter 1: 
+  * The Jacobian and derivative of a function as in 1.7 are automatically in brackets to indicate they are matrices. Uses `mathcal` font.
+  * Interior, closure, and boundary symbols added. 
+  * Abbreviations for starting/ending matrices. 
+* Chapter 2: 
+  * Augmented matrices (both parenthesis and bracket delimiters) added
