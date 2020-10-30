@@ -43,3 +43,5 @@ Any other notation that's not the above stuff that appears in Hubbard (5th ed.) 
   * Augmented matrices (both parenthesis and bracket delimiters) added
   * span is now `\spn`, image is `\im`. (Hubbard's notation uses img for the image, I prefer im)
   * dimension is `\dim`, kernel is `\ker`, which are both implemented by default
+  * added notation for change of basis matrix 
+  * "Divided matrices" (both parenthesis and bracket delimiters) when computing matrix inverses added
