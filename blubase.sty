@@ -39,22 +39,22 @@
 \newcommand{\ol}[1]{\overline{#1}}
 \newcommand{\ul}[1]{\underline{#1}}
 
-% Syntactically-named delimiters
-\DeclarePairedDelimiter{\braces}{\{}{\}}
-\DeclarePairedDelimiter{\parens}{(}{)}
-\DeclarePairedDelimiter{\brackets}{[}{]}
-\DeclarePairedDelimiter{\angles}{\langle}{\rangle}
-\DeclarePairedDelimiter{\verts}{\lvert}{\rvert}
-\DeclarePairedDelimiter{\Verts}{\lVert}{\rVert}
-\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
-\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+% Syntactically-named delimiters	
+\newcommand{\braces}[1]{\left\{ #1 \right\}}	
+\newcommand{\parens}[1]{\left( #1 \right)}	
+\newcommand{\brackets}[1]{\left[ #1 \right]}	
+\newcommand{\angles}[1]{\left\langle #1 \right\rangle}	
+\newcommand{\verts}[1]{\left\lvert #1 \right\rvert}	
+\newcommand{\Verts}[1]{\left\lVert #1 \right\rVert}	
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}	
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}	
 
-% Semantically-named delimiters
-\newcommand{\set}{\braces}
-\newcommand{\abs}{\verts}
-\newcommand{\size}{\verts}
-\newcommand{\norm}{\Verts}
-\newcommand{\tuple}{\angles}
+% Semantically-named delimiters	
+\newcommand{\set}[1]{\braces{#1}}	
+\newcommand{\abs}[1]{\verts{#1}}	
+\newcommand{\size}[1]{\verts{#1}}	
+\newcommand{\norm}[1]{\Verts{#1}}	
+\newcommand{\tuple}[1]{\angles{#1}}
 
 % Symbols
 \newcommand{\eps}{\varepsilon}
@@ -153,6 +153,19 @@
 \newcommand{\abmat}[2]{\begin{abmatrix}{#1} #2 \end{abmatrix}}
 \DeclareMathOperator{\spn}{span}
 \DeclareMathOperator{\im}{im}
+\newcommand{\cbasis}[2]{\left[P_{\braces{\bf{#1}} \rightarrow \braces{\bf{#2}}}\right]}	
+\newenvironment{dpmatrix}[1]{%	
+  \left(\begin{array}{@{}*{#1}{c}|*{#1}{c}@{}}	
+}{%	
+  \end{array}\right)	
+}	
+\newenvironment{dbmatrix}[1]{%	
+  \left[\begin{array}{@{}*{#1}{c}|*{#1}{c}@{}}	
+}{%	
+  \end{array}\right]	
+}	
+\newcommand{\dpmat}[2]{\begin{dpmatrix}{#1} #2 \end{dpmatrix}}	
+\newcommand{\dbmat}[2]{\begin{dbmatrix}{#1} #2 \end{dbmatrix}} 
 
 % Calculus
 \newcommand{\dv}[2]{\frac{d #1}{d #2}}
@@ -190,6 +203,7 @@
 
 % Physics
 %\renewcommand{\hat}{\mathbf}
+\newcommand{\vect}[1]{\vec{\bf{#1}}} % for heathens only
 \newcommand{\lagrangian}{\mathcal{L}}
 \newcommand{\lagr}{\lagrangian}
 \newcommand{\emf}{\mathcal{E}}
