@@ -14,7 +14,7 @@ This is not meant to be a complete listing; but the following describes at a hig
 **BIG NOTE: Redefinition of `\bf`:** You shouldn't be using this anyway, so I've repurposed it to be the shorthand for `\mathbf`. 
 
 ### Sets of Numbers
-All common sets of numbers (the naturals, integers, rationals, reals, complex, etc.) have macros. For example, the integers are `\ZZ`. 
+All common sets of numbers (the naturals, integers, rationals, reals, complex, etc.) have macros. For example, the integers are `\ZZ`. The set of n x m matrices also now has a shortcut - Mat(n, m) can be written as `\mat(n, m)`.
 
 ### Complex Number Operators
 Real and imaginary part operators don't look super ugly, capitalized for principal-valued functions for Log and Arg. 
@@ -45,3 +45,6 @@ Any other notation that's not the above stuff that appears in Hubbard (5th ed.) 
   * dimension is `\dim`, kernel is `\ker`, which are both implemented by default
   * added notation for change of basis matrix 
   * "Divided matrices" (both parenthesis and bracket delimiters) when computing matrix inverses added
+* Chapter 3: 
+  * the one when I finally decided to implement a command for the set of n x m matrices (see above)
+  * more very likely to come
