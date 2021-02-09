@@ -11,7 +11,7 @@ Bryan Lu's LaTeX Package (and other stuff)
 
 This is not meant to be a complete listing; but the following describes at a high level what kinds of commands are included in this package: 
 
-**BIG NOTE: Redefinition of `\bf`:** You shouldn't be using this anyway, so I've repurposed it to be the shorthand for `\mathbf`. 
+**BIG NOTE: Redefinition of `\bf`:** You shouldn't be using this anyway for good-practice reasons, so I've repurposed it to be the shorthand for `\mathbf`. 
 
 ### Sets of Numbers
 All common sets of numbers (the naturals, integers, rationals, reals, complex, etc.) have macros. For example, the integers are `\ZZ`. The set of n x m matrices also now has a shortcut - Mat(n, m) can be written as `\mat(n, m)`.
@@ -20,7 +20,7 @@ All common sets of numbers (the naturals, integers, rationals, reals, complex, e
 Real and imaginary part operators don't look super ugly, capitalized for principal-valued functions for Log and Arg. 
 
 ### Combinatorics
-Implemented from the Concrete Math (Spring 2019) class at TJ. Lots of commands dedicated to Knuth's Stirling number notation (for both the first and second kinds). 
+Implemented from the TJ Concrete Math (Spring 2019) class. Lots of commands dedicated to Knuth's Stirling number notation (for both the first and second kinds). 
 
 ### Calculus and Calculus Operators 
 Lots of commands to abbreviate derivatives, partial derivatives, and mixed partials. Has vector operators for the gradient, curl, divergence, and Laplacian. 
@@ -29,9 +29,9 @@ Lots of commands to abbreviate derivatives, partial derivatives, and mixed parti
 Has stuff for the Lagrangian and Hamiltonian and other things in the cool, swirly `mathcal` font. 
 
 ### Dirac Notation and Commutators
-Supports all that jazz, from my (incomplete) transcription of Quantum/Electrodynamics (2018-2019) class notes. 
+Supports all that jazz, from my (incomplete) transcription of TJ Quantum/Electrodynamics (2018-2019) class notes. 
 
-### MATH 2230 Notation
+### MATH 2230/40 Notation
 Any other notation that's not the above stuff that appears in Hubbard (5th ed.) from Chapters 0-2 is in here. Some notes: 
 * Chapter 0/Other: 
   * I prefer `\varepsilon` to `\epsilon`, so the former is abbreviated as `\eps`.
@@ -48,4 +48,10 @@ Any other notation that's not the above stuff that appears in Hubbard (5th ed.) 
 * Chapter 3: 
   * the one when I finally decided to implement a command for the set of n x m matrices (see above) and the trace as well, I guess
   * Taylor series notation added
-  * because not even Hubbard can decide which way the indices go for the multi-exponents, I have made the executive decision to make `\multexp{n}`, the set of all multi-exponents in `n` variables, have the `n` as the subscript. If you don't like it, change it.  
+  * because not even Hubbard can decide which way the indices go for the multi-exponents, I have made the executive decision to make `\multexp{n}`, the set of all multi-exponents in `n` variables, have the `n` as the subscript. If you don't like it, change it. 
+*(from here onward, this uses Prof. Manning's notation/whatever notation is appropriate)*
+* Chapter 4: 
+ * (coming soon!)
+
+### MATH 4340 Notation 
+*(similar to that used in Dummit and Foote (3rd ed.), but sometimes different.*
