@@ -49,9 +49,9 @@ Any other notation that's not the above stuff that appears in Hubbard (5th ed.) 
   * the one when I finally decided to implement a command for the set of n x m matrices (see above) and the trace as well, I guess
   * Taylor series notation added
   * because not even Hubbard can decide which way the indices go for the multi-exponents, I have made the executive decision to make `\multexp{n}`, the set of all multi-exponents in `n` variables, have the `n` as the subscript. If you don't like it, change it. 
-*(from here onward, this uses Prof. Manning's notation/whatever notation is appropriate)*
+(from here onward, this uses Prof. Manning's notation/whatever notation is appropriate)*
 * Chapter 4: 
- * (coming soon!)
+  * (coming soon!)
 
 ### MATH 4340 Notation 
-*(similar to that used in Dummit and Foote (3rd ed.), but sometimes different.*
+*(similar to that used in Dummit and Foote (3rd ed.), but sometimes different.)*
