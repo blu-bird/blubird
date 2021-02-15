@@ -56,5 +56,3 @@ Any other notation that's not the above stuff that appears in Hubbard (5th ed.) 
   * the volume function `\vol` for the volume of various regions
   * the symbol for the set of dyadic pavings, `\dpav`, with one argument for the order $N$ of the paving.
 
-### MATH 4340 Notation 
-*(similar to that used in Dummit and Foote (3rd ed.), but sometimes different.)*
