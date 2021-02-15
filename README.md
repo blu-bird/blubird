@@ -46,13 +46,15 @@ Any other notation that's not the above stuff that appears in Hubbard (5th ed.) 
   * added notation for change of basis matrix 
   * "Divided matrices" (both parenthesis and bracket delimiters) when computing matrix inverses added
 * Chapter 3: 
-  * the one when I finally decided to implement a command for the set of n x m matrices (see above) and the trace as well, I guess
-  * Taylor series notation added
+  * the trace of a matrix finally implemented as `\tr`!
+  * Taylor series notation added. First argument is the function $f$; the second, the order of the polynomial $n$; and the third, the center of the series $\mathbf{a}$. 
   * because not even Hubbard can decide which way the indices go for the multi-exponents, I have made the executive decision to make `\multexp{n}`, the set of all multi-exponents in `n` variables, have the `n` as the subscript. If you don't like it, change it. 
   
 *(from here onward, this uses Prof. Manning's notation/whatever notation is appropriate)*
 * Chapter 4: 
-  * (coming soon!)
+  * indicator function $\mathbf{1}$, with argument for the region for which the function is 1. 
+  * the volume function `\vol` for the volume of various regions
+  * the symbol for the set of dyadic pavings, `\dpav`, with one argument for the order $N$ of the paving.
 
 ### MATH 4340 Notation 
 *(similar to that used in Dummit and Foote (3rd ed.), but sometimes different.)*
