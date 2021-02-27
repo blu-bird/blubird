@@ -184,6 +184,10 @@
 \newcommand{\vol}{\text{vol}}
 \newcommand{\dpav}[1]{\mathcal{D}_{#1}}
 
+% Recitation Presentations
+\newcommand{\innerproduct}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\ip}[2]{\innerproduct{#1}{#2}}
+
 % Calculus
 \newcommand{\dv}[2]{\frac{d #1}{d #2}}
 \newcommand{\ddv}[2]{\frac{d^2 #1}{d #2^2}}
@@ -232,11 +236,11 @@
 %Dirac Notation
 \newcommand{\ket}[1]{\left| #1 \right\rangle}
 \newcommand{\bra}[1]{\left\langle #1 \right|}
-\newcommand{\innerproduct}[2]{\left\langle #1 \middle| #2 \right\rangle}
-\newcommand{\braket}[2]{\innerproduct{#1}{#2}}
-\newcommand{\ip}[2]{\innerproduct{#1}{#2}}
+\newcommand{\innerproductd}[2]{\left\langle #1 \middle| #2 \right\rangle}
+\newcommand{\braket}[2]{\innerproductd{#1}{#2}}
+\newcommand{\ipd}[2]{\innerproductd{#1}{#2}}
 \newcommand{\innerproductoperator}[3]{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}
-\newcommand{\ipo}[3]{\innerproductoperator{#1}{#2}{#3}}
+\newcommand{\ipod}[3]{\innerproductoperator{#1}{#2}{#3}}
 \newcommand{\outerproduct}[2]{\left| #1 \right\rangle \left\langle #2 \right|}
 \newcommand{\dyad}[2]{\outerproduct{#1}{#2}}
 \newcommand{\op}[2]{\outerproduct{#1}{#2}}
