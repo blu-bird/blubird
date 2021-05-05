@@ -1,4 +1,4 @@
-\ProvidesPackage{blubase}[2021/02/17]
+\ProvidesPackage{blubase}[2021/04/17]
 
 \usepackage{amsmath, amssymb, amsthm, amsfonts}
 \usepackage{mathtools}
@@ -185,13 +185,13 @@
 \newcommand{\ind}[1]{\bf{1}_{#1}}
 \newcommand{\vol}{\text{vol}}
 \newcommand{\dpav}[1]{\mathcal{D}_{#1}}
-\newcommand{\dvol}[1]{\abs{d^{#1}\bf x}}
+\newcommand{\dvol}[2]{\abs{d^{#1}\bf{#2}}}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\sign}{sign}
 
 % Chapter 5
 \newcommand{\area}{\text{area}}
-\newcommand{\hausd}[1]{\mathcal{H}_{#1}}
+\newcommand{\hausd}[1]{\mathcal{H}^{#1}}
 \newcommand{\dmanvol}[1]{\sqrt{\det\left({#1}^\top {#1}\right)}}
 
 % Chapter 6
@@ -234,10 +234,13 @@
 \newcommand{\out}[1]{\mathrm{Out}\parens{#1}}
 
 % Trigonometry
-\newcommand{\arcsec}{\mathrm{arcsec}}
-\newcommand{\arccot}{\mathrm{arccot}}
-\newcommand{\arccsc}{\mathrm{arccsc}}
-\newcommand{\sinc}{\mathrm{sinc}}
+\DeclareMathOperator{\arcsec}{\mathrm{arcsec}}
+\DeclareMathOperator{\arccot}{\mathrm{arccot}}
+\DeclareMathOperator{\arccsc}{\mathrm{arccsc}}
+\DeclareMathOperator{\sinc}{\mathrm{sinc}}
+\DeclareMathOperator{\sech}{\mathrm{sech}}
+\DeclareMathOperator{\csch}{\mathrm{csch}}
+\DeclareMathOperator{\arctanh}{\mathrm{arctanh}}
 
 % Physics
 %\renewcommand{\hat}{\mathbf}
