@@ -57,7 +57,7 @@ Any other notation that's not the above stuff that appears in Hubbard (5th ed.) 
   * `\sgn` and `\sign` used for signature (of a permutation), or sign of a permutation (or really anything), use whichever you like 
 * Chapter 5: 
   * `\area` macro for two dimensions
-  * `\hausd` for Hausdorff notation as used by Professor Manning in lecture - not standard (read: not used by Hubbard in the book itself) 
+  * `\hausd` for Hausdorff dimension/measure notation as used by Professor Manning in lecture - not standard (read: not used by Hubbard in the book itself) 
   * `\dmanvol` for typing out the big square root of determinants if you're feeling a little lazy, don't recommend using regularly
 * Chapter 6: 
   * `\baset` to represent the symbols used for an ordered basis of a vector space V (with the subscript V) or as "operating" on a manifold, giving ordered bases of the tangent space at every point on a smooth manifold
