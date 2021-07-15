@@ -47,12 +47,12 @@ Any other notation that's not the above stuff that appears in Hubbard (5th ed.) 
   * "Divided matrices" (both parenthesis and bracket delimiters) when computing matrix inverses added
 * Chapter 3: 
   * the trace of a matrix finally implemented as `\tr`!
-  * Taylor series notation added. First argument is the function $f$; the second, the order of the polynomial $n$; and the third, the center of the series $\mathbf{a}$. 
+  * Taylor series notation added. First argument is the function f; the second, the order of the polynomial n; and the third, the center of the series \mathbf{a}. 
   * because not even Hubbard can decide which way the indices go for the multi-exponents, I have made the executive decision to make `\multexp{n}`, the set of all multi-exponents in `n` variables, have the `n` as the subscript. If you don't like it, change it. 
 * Chapter 4: 
   * indicator function $\mathbf{1}$, with argument for the region for which the function is 1. 
   * the volume function `\vol` for the volume of various regions
-  * the symbol for the set of dyadic pavings, `\dpav`, with one argument for the order $N$ of the paving.
+  * the symbol for the set of dyadic pavings, `\dpav`, with one argument for the order N of the paving.
   * Made it easier to type absolute-value differential with `\dvol`
   * `\sgn` and `\sign` used for signature (of a permutation), or sign of a permutation (or really anything), use whichever you like 
 * Chapter 5: 
