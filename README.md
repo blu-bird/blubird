@@ -1,5 +1,6 @@
 # blubird
 Bryan Lu's LaTeX Package (and other stuff) 
+(basically a re-implementation of the physics package)
 
 ## Instructions for Use
 **For making handouts:** download blubase.sty and blubird.sty. Use class scrartcl in your document and include `\usepackage{blubird}` in your preamble. 
@@ -20,7 +21,7 @@ All common sets of numbers (the naturals, integers, rationals, reals, complex, e
 Real and imaginary part operators don't look super ugly, capitalized for principal-valued functions for Log and Arg.
 
 ### Combinatorics
-Implemented from the TJ Concrete Math (Spring 2019) class. Lots of commands dedicated to Knuth's Stirling number notation (for both the first and second kinds). 
+Implemented from my Concrete Math (Spring 2019) class. Lots of commands dedicated to Knuth's Stirling number notation (for both the first and second kinds). 
 
 ### Functions, Calculus and Calculus Operators 
 Lots of commands to abbreviate derivatives, partial derivatives, and mixed partials. Has vector operators for the gradient, curl, divergence, and Laplacian. Added some hyperbolic functions and inverses of some specific trig/hyperbolic trig functions not already covered. 
@@ -29,7 +30,7 @@ Lots of commands to abbreviate derivatives, partial derivatives, and mixed parti
 Has stuff for the Lagrangian and Hamiltonian and other things in the cool, swirly `mathcal` font. 
 
 ### Dirac Notation and Commutators
-Supports all that jazz, from my (incomplete) transcription of TJ Quantum/Electrodynamics (2018-2019) class notes. 
+Supports all that jazz, from my (incomplete) transcription of my Quantum/Electrodynamics (2018-2019) class notes. 
 
 ### MATH 2230/40 Notation
 Any other notation that's not the above stuff that appears in Hubbard (5th ed.) is here. Some notes: 
