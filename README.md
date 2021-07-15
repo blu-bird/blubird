@@ -1,6 +1,5 @@
 # blubird
 Bryan Lu's LaTeX Package (and other stuff) 
-(basically a re-implementation of the physics package)
 
 ## Instructions for Use
 **For making handouts:** download blubase.sty and blubird.sty. Use class scrartcl in your document and include `\usepackage{blubird}` in your preamble. 
