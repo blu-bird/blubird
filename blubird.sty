@@ -14,6 +14,7 @@
 
 \ProcessOptions\relax
 
+% STYLING PACKAGES 
 \usepackage{blubase}
 \KOMAoptions{fontsize = 10pt, paper = letter, DIV = 20}
 \KOMAoptions{numbers = noendperiod}
@@ -22,10 +23,9 @@
 
 \usepackage{lmodern}
 \usepackage{microtype}
-
-\usepackage{enumitem}
 \usepackage{multicol}
 
+% links
 \usepackage{hyperref}
 \usepackage{cleveref} % must be loaded after hyperref
 
@@ -34,13 +34,12 @@
 \usepackage[obeyFinal, textsize = scriptsize]{todonotes}
 
 \usepackage{thmtools}
+\usepackage[margin=1in]{geometry}
 \PassOptionsToPackage{svgnames, dvipsnames, usenames}{xcolor}
 \usepackage[framemethod = TikZ]{mdframed}
-\usepackage{silence} % for suppressing warnings
+\usepackage{silence} % for suppressing warnings :)
 
 % SETUP
-
-\author{Bryan Lu}
 
 \ifbirddate\else
 	\date{~\vspace{-5ex}}
@@ -97,6 +96,7 @@
 
 \newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
 
+% THEOREM BOX COLORS - need some love
 \ifbirdcolor
 	\colorlet{defforeground}{red!70!black}
 	\colorlet{defbackground}{red!5}
@@ -153,6 +153,7 @@
 
 \newcommand{\boxhack}{~\vspace{-2em}}
 
+% THEOREM STYLES - need some love
 \declaretheorem[style = thmbox, name = Theorem]{theorem}
 \declaretheorem[style = thmbox, name = Lemma, sibling = theorem]{lemma}
 \declaretheorem[style = thmbox, name = Proposition, sibling = theorem]{proposition}
