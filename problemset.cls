@@ -12,6 +12,7 @@
 \newtheorem{theorem}{Theorem}
 \newtheorem{corollary}{Corollary}
 \newtheorem{lemma}{Lemma}
+\newtheorem*{solution}{\textbf{Solution}}
 \newtheorem{proposition}{Proposition}
 \newtheorem{defn}{Definition}
 \newtheorem{Conjecture}{Conjecture}
@@ -26,6 +27,7 @@
 \newcommand{\coursename}[1]{\gdef\@coursename{#1}}
 \newcommand{\hwNo}[1]{\gdef\@hwNo{#1}}
 \newcommand{\duedate}[1]{\gdef\@duedate{#1}}
+\newcommand{\collabs}[1]{\gdef\@collabs{#1}}
 
 \let\Oldmaketitle\maketitle
 \renewcommand{\maketitle}
@@ -80,7 +82,7 @@
 %}
 
 \title{\vspace{-2cm}\@coursename \ -- Problem Set \@hwNo}
-\author{\@studname}
+\author{\@studname \\ Collaborators: \@collabs}
 \date{\@duedate}
 
 \endinput
