@@ -61,26 +61,6 @@
 \fancyhead[R]{\@studname}
 \renewcommand{\footrulewidth}{0.4 pt}
 
-%\newcommand*{\skipevenpage}{
-%	\newpage
-%	\if@twoside
-%	\setcounter{sum}{\value{page}}
-%	\addtocounter{sum}{\value{emptypages}}
-%	\ifthenelse{\isodd{\value{sum}}}
-%	{
-%	}
-%	{
-%		\thispagestyle{empty}
-%		\hbox{}
-%		\newpage
-%		\addtocounter{page}{-1}
-%		\addtocounter{emptypages}{1}
-%	}
-%	{
-%	}
-%	\fi
-%}
-
 \title{\vspace{-2cm}\@coursename \ -- Problem Set \@hwNo}
 \author{\@studname \\ Collaborators: \@collabs}
 \date{\@duedate}
