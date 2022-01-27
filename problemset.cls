@@ -1,5 +1,9 @@
-\LoadClass[12pt]{article}
 \ProvidesClass{problemset}
+
+% OPTIONS
+\DeclareOption{sserif}{\renewcommand{\familydefault}{\sfdefault}}
+\ProcessOptions\relax
+\LoadClass[12pt]{article}
 
 \usepackage{blubase}
 \usepackage{fancyhdr}
