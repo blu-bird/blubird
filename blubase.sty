@@ -1,4 +1,4 @@
-\ProvidesPackage{blubase}[2021/11/05]
+\ProvidesPackage{blubase}[2022/01/26]
 
 \usepackage{amsmath, amssymb, amsthm, amsfonts}
 \usepackage{mathtools}
@@ -10,8 +10,11 @@
 \usepackage{accents}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
+\usepackage{bm} % for categories
 
-\usepackage[inline]{asymptote}
+% graphics
+\usepackage[inline]{asymptote} % preferred for oly geo
+\usepackage{tikz-cd} % for categories
 
 \usepackage{graphicx}
 \usepackage{subcaption}
@@ -239,6 +242,10 @@
 \newcommand{\tor}{\mathrm{Tor}}
 \newcommand{\ann}{\mathrm{Ann}}
 
+% Category Theory
+\newcommand{\cat}[1]{\bm{\mathsf{#1}}}
+\newcommand{\opp}[1]{{#1}^{\mathsf{op}}}
+
 % Trigonometry
 \DeclareMathOperator{\arcsec}{\mathrm{arcsec}}
 \DeclareMathOperator{\arccot}{\mathrm{arccot}}
@@ -272,6 +279,10 @@
 \newcommand{\hamiltonian}{\mathcal{H}}
 \newcommand{\ham}{\hamiltonian}
 \newcommand{\rot}[2]{R_{\hat{#1}} \left( #2 \right)}
+
+% Relativity and Four-Vectors
+\newcommand{\fourvec}[4]{\bmat{#1 \\ #2 \\ #3 \\ #4}}
+\newcommand{\twovec}[2]{\bmat{#1 \\ #2}}
 
 %Dirac Notation
 \newcommand{\ket}[1]{\left| #1 \right\rangle}
