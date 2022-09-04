@@ -8,6 +8,7 @@
 \usepackage{blubase}
 \usepackage{fancyhdr}
 \usepackage[margin=1in]{geometry}
+\setlength{\headheight}{15pt}
 
 \theoremstyle{plain}
 \theoremstyle{definition}

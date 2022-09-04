@@ -1,4 +1,4 @@
-\ProvidesPackage{blubase}[2022/01/26]
+\ProvidesPackage{blubase}[2022/02/14]
 
 \usepackage{amsmath, amssymb, amsthm, amsfonts}
 \usepackage{mathtools}
@@ -122,6 +122,10 @@
 \newcommand{\expval}[1]{\left\langle #1 \right\rangle}
 \newcommand{\snb}[2]{\left(\binom{#1}{#2}\right)}
 \newcommand{\tsnb}[2]{(\binom{#1}{#2})}
+\newcommand{\covs}{\gtrdot}
+\newcommand{\covby}{\lessdot}
+\newcommand{\del}{\mathrm{del}}
+\newcommand{\link}{\mathrm{link}}
 
 % Geometry
 \newcommand{\dg}{^\circ}
@@ -207,6 +211,9 @@
 \newcommand{\innerproduct}[2]{\left\langle #1, #2 \right\rangle}
 \newcommand{\ip}[2]{\innerproduct{#1}{#2}}
 
+% Symmetric Polynomials (MATH 4420)
+\DeclareMathOperator{\schur}{Schur}
+
 % Calculus
 \newcommand{\dv}[2]{\frac{d #1}{d #2}}
 \newcommand{\ddv}[2]{\frac{d^2 #1}{d #2^2}}
@@ -241,6 +248,9 @@
 \newcommand{\edom}{\mathrm{End}}
 \newcommand{\tor}{\mathrm{Tor}}
 \newcommand{\ann}{\mathrm{Ann}}
+\newcommand{\sym}{\mathrm{sym}}
+\newcommand{\actson}{\curvearrowright}
+\newcommand{\stab}{\mathrm{stab}}
 
 % Category Theory
 \newcommand{\cat}[1]{\bm{\mathsf{#1}}}
