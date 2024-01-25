@@ -1,4 +1,4 @@
-\ProvidesPackage{blubird}[2023/04/06]
+\ProvidesPackage{blupaper}[2023/04/06]
 
 \newif\ifbirddate      \birddatetrue
 \newif\ifbirdserif     \birdseriffalse
@@ -24,7 +24,8 @@
 \usepackage{microtype}
 \usepackage{multicol}
 \usepackage{titling} 
-\usepackage{enumitem} 
+\usepackage{biblatex}
+
 % links
 \usepackage{hyperref}
 \usepackage{cleveref} % must be loaded after hyperref
@@ -159,23 +160,16 @@
 \newcommand{\boxhack}{~\vspace{-2em}}
 
 % THEOREM STYLES - need some love
-\declaretheorem[style = defbox, name = Definition,
-numberwithin=section]{definition}
-\declaretheorem[style=plain, name = Definition,
-numbered=no]{definition*}
-\declaretheorem[style = thmbox, name = Theorem, numberwithin=section,
+\declaretheorem[name = Definition, numberwithin=section]{definition}
+\declaretheorem[name = Theorem, numberwithin=section,
 sibling = definition]{theorem}
-\declaretheorem[style=plain, name = Theorem,
-numbered=no]{theorem*}
-\declaretheorem[style = thmbox, name = Lemma, sibling = theorem]{lemma}
-\declaretheorem[style = thmbox, name = Proposition, sibling = theorem]{proposition}
-\declaretheorem[style = thmbox, name = Corollary, sibling = theorem]{corollary}
-\declaretheorem[style=plain, name = Corollary, numbered = no]{corollary*}
-\declaretheorem[style = thmbox, name = Conjecture, sibling = theorem]{conjecture}
-\declaretheorem[style=thmbox, name=Idea, numberwithin=section]{idea}
+\declaretheorem[name = Lemma, sibling = theorem]{lemma}
+\declaretheorem[name = Proposition, sibling = theorem]{proposition}
+\declaretheorem[name = Corollary, sibling = theorem]{corollary}
+\declaretheorem[name = Conjecture, sibling = theorem]{conjecture}
 %\declaretheorem[style = thmbox, name = Algorithm, sibling = theorem]{algorithm}
 
-\declaretheorem[style = defbox, name = Fact, sibling = theorem]{fact}
+\declaretheorem[name = Fact, sibling = theorem]{fact}
 
 \declaretheorem[style = plain, name = Exercise, numbered = no]{exercise}
 \declaretheorem[style = plain, name = Problem, numbered = no]{problem}

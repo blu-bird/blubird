@@ -1,0 +1,59 @@
+\documentclass{beamer}
+\usetheme{Boadilla} % Pretty neat, soft color.
+\setbeamercovered{invisible}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+
+% contains all commands, package imports 
+\usepackage{blubase}
+\usepackage{multicol}
+\usepackage{thmtools}
+% theorem environments
+\theoremstyle{plain}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{question}[theorem]{Question}
+\declaretheorem[style=plain, name = Definition,numbered=no]{definition*}
+
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\renewcommand{\mod}[2]{\equiv#1\ \left(\textup{mod }#2\right)}
+
+\xdefinecolor{dred}{RGB}{90,0,0}
+\xdefinecolor{lred}{RGB}{255,240,230}
+\setbeamercolor{upperr}{fg=white,bg=dred}
+\setbeamercolor{lowerr}{fg=black,bg=lred}
+\xdefinecolor{dgreen}{RGB}{0,90,0}
+\xdefinecolor{lgreen}{RGB}{240,255,230}
+\setbeamercolor{upperg}{fg=white,bg=dgreen}
+\setbeamercolor{lowerg}{fg=black,bg=lgreen}
+
+%\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{N}{@{}m{0pt}@{}}
+
+\makeatletter
+\newcommand{\thickhline}{\noalign {\ifnum 0=`}\fi \hrule height 1pt \futurelet \reserved@a \@xhline}
+
+\def\msquare{\mathord{\scalerel*{\Box}{gX}}}
+
+\title[]{Title}
+\author{Author}
+\date{July 17, 2023}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\usebackgroundtemplate{ }
+
+\begin{frame}{Sample}
+ 
+
+\end{frame}
+
+\end{document}
+

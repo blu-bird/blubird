@@ -11,6 +11,10 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{bm} % for categories
+\usepackage{mathpartir}
+\usepackage{stmaryrd} % oxford brackets
+\usepackage{bbm} % blackboard numbers
+\usepackage{ytableau} % young tableaux
 
 % graphics
 \usepackage[inline]{asymptote} % preferred for oly geo
@@ -38,15 +42,21 @@
 % Macros
 \newcommand{\NewPage}{\vfill\eject}
 \newcommand{\ds}{\displaystyle}
+\newcommand{\mfk}[1]{\mathfrak{#1}}
+\newcommand{\msc}[1]{\mathscr{#1}}
 
 % Emphasizing
+\newcommand{\tbf}[1]{\textbf{#1}}
+\newcommand{\tit}[1]{\textit{#1}}
+\newcommand{\ttt}[1]{\texttt{#1}}
+\newcommand{\mt}[1]{\text{#1}}
 \newcommand{\vocab}[1]{\textbf{\color{blue}\boldmath #1}}
 \newcommand{\ol}[1]{\overline{#1}}
 \newcommand{\ul}[1]{\underline{#1}}
 
 % Syntactically-named delimiters	
 \newcommand{\braces}[1]{\left\{ #1 \right\}}	
-\newcommand{\parens}[1]{\left( #1 \right)}	
+\newcommand{\parens}[1]{\left(#1\right)}	
 \newcommand{\brackets}[1]{\left[ #1 \right]}	
 \newcommand{\angles}[1]{\left\langle #1 \right\rangle}	
 \newcommand{\verts}[1]{\left\lvert #1 \right\rvert}	
@@ -54,6 +64,7 @@
 \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}	
 \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}	
 \newcommand{\multiset}[1]{\left\{\left\{ #1 \right\}\right\}}
+\newcommand{\quine}[1]{\left\ulcorner #1 \right\urcorner}
 
 % Semantically-named delimiters	
 \newcommand{\set}[1]{\braces{#1}}	
@@ -70,12 +81,14 @@
 \newcommand{\divides}{\; \middle\vert \;}
 \newcommand{\mto}{\mapsto}
 \newcommand{\bs}{\backslash}
+\newcommand{\xto}[1]{\xrightarrow{#1}}
+\newcommand{\xgets}[1]{\xleftarrow{#1}}
 
 % Basic Math
 \newcommand{\half}{\ensuremath{\frac{1}{2}}}
 \newcommand{\cbrt}[1]{\sqrt[3]{#1}}
 
-% Sets
+% Sets/Orders
 \newcommand{\FF}{\mathbb F}
 \newcommand{\NN}{\mathbb N}
 \newcommand{\ZZ}{\mathbb Z}
@@ -86,7 +99,14 @@
 \newcommand{\GG}{\mathbb G} %PUMaC 2018 Power
 \newcommand{\GGtil}{\Tilde{\mathbb G}} %PUMaC 2018 Power
 \newcommand{\II}{\mathbb I}
+\newcommand{\TT}{\mathbb T}
 \newcommand{\id}{\mathrm{id}}
+\newcommand{\ev}{\mathrm{ev}}
+\newcommand{\codom}{\mathrm{codom}}
+\newcommand{\dom}{\mathrm{dom}}
+\newcommand{\pto}{\rightharpoonup}
+\newcommand{\minor}{\prec}
+\newcommand{\major}{\succ}
 
 % Complex
 \DeclareMathOperator*{\argmax}{argmax}
@@ -147,7 +167,7 @@
 \newcommand{\tpmat}[1]{\begin{psmallmatrix}#1\end{psmallmatrix}}
 \newcommand{\inter}[1]{\accentset{\circ}{#1}} %interior	
 \newcommand{\closu}[1]{\overline{#1}} %closure	
-\newcommand{\bound}[1]{\partial #1} %boundary	
+\newcommand{\bound}{\partial} %boundary	
 \newcommand{\pop}[1]{\partial_{#1}}	
 \newcommand{\jacob}[1]{\left[\mathcal{J}#1\right]}	
 \newcommand{\deriv}[1]{\left[\mathcal{D}#1\right]}
@@ -167,6 +187,7 @@
 \newcommand{\apmat}[2]{\begin{apmatrix}{#1} #2 \end{apmatrix}}
 \newcommand{\abmat}[2]{\begin{abmatrix}{#1} #2 \end{abmatrix}}
 \DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\im}{im}
 \newcommand{\cbasis}[2]{\left[P_{\braces{\bf{#1}} \rightarrow \braces{\bf{#2}}}\right]}	
 \newenvironment{dpmatrix}[1]{%	
@@ -183,7 +204,7 @@
 \newcommand{\dbmat}[2]{\begin{dbmatrix}{#1} #2 \end{dbmatrix}} 
 
 % Chapter 3
-\newcommand{\mat}{\text{Mat}}
+\newcommand{\mat}{\mathrm{Mat}}
 \newcommand{\multexp}[1]{\mathcal{I}_{#1}}
 \newcommand{\taylorone}[3]{p^{#2}_{#1 , #3}}
 \newcommand{\taylor}[3]{P^{#2}_{#1 , #3}}
@@ -191,11 +212,12 @@
 
 % Chapter 4
 \newcommand{\ind}[1]{\bf{1}_{#1}}
-\newcommand{\vol}{\text{vol}}
+\newcommand{\vol}{\mathrm{vol}}
 \newcommand{\dpav}[1]{\mathcal{D}_{#1}}
 \newcommand{\dvol}[2]{\abs{d^{#1}\bf{#2}}}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\supp}{supp}
 
 % Chapter 5
 \newcommand{\area}{\text{area}}
@@ -246,15 +268,66 @@
 \newcommand{\inn}[1]{\mathrm{Inn}\parens{#1}}
 \newcommand{\out}[1]{\mathrm{Out}\parens{#1}}
 \newcommand{\edom}{\mathrm{End}}
-\newcommand{\tor}{\mathrm{Tor}}
 \newcommand{\ann}{\mathrm{Ann}}
 \newcommand{\sym}{\mathrm{sym}}
 \newcommand{\actson}{\curvearrowright}
 \newcommand{\stab}{\mathrm{stab}}
+\newcommand{\orb}{\mathcal O}
+\DeclareMathOperator{\chr}{\mathrm{char}}
+\newcommand{\Hom}{\mathrm{Hom}}
+
+% Matrix Groups/Lie Algebras
+\newcommand{\aff}{\mathrm{Aff}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\OG}{\mathrm{O}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\UG}{\mathrm{U}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\SP}{\mathrm{Sp}}
+\newcommand{\glla}{\mathfrak{gl}}
+\newcommand{\slla}{\mathfrak{sl}}
+\newcommand{\ola}{\mathfrak{o}}
+\newcommand{\sola}{\mathfrak{so}}
+\newcommand{\ula}{\mathfrak{u}}
+\newcommand{\sula}{\mathfrak{su}}
+\newcommand{\spla}{\mathfrak{sp}}
+\newcommand{\lie}{\mathrm{Lie}}
+\newcommand{\Ad}{\mathrm{Ad}} % adjoint representation 
+\newcommand{\Gr}{\mathrm{Gr}}
+\newcommand{\Fl}{\mathrm{Fl}}
+
+% Manifolds
+\newcommand{\Der}{\mathrm{Der}}
+\newcommand{\ldv}{\mathscr{L}} % Lie derivative
+\newcommand{\vfs}{\mathscr{X}} % smooth vector fields
+\newcommand{\Bl}{\mathrm{Bl}} % blow-up
+\newcommand{\tnvs}{\pitchfork} % transverse 
+\DeclareMathOperator{\codim}{\mathrm{codim}}
+\newcommand{\Fr}{\mathrm{Fr}} % frames
+
+% Semantics/Programming Languages
+\newcommand{\oxbrace}[1]{\left\llbracket#1\right\rrbracket}
 
 % Category Theory
-\newcommand{\cat}[1]{\bm{\mathsf{#1}}}
+\newcommand{\cat}[1]{\textbf{#1}}
 \newcommand{\opp}[1]{{#1}^{\mathsf{op}}}
+\newcommand{\ad}{\mathrm{ad}}
+
+% Algebraic Topology 
+\newcommand{\htpy}{\simeq}
+\newcommand{\const}[1]{\mathrm{const}_{#1}}
+\newcommand{\cay}{\mathrm{Cay}}
+\newcommand{\cupp}{\smallsmile}
+
+% Homological Algebra
+\newcommand{\ext}{\mathrm{Ext}}
+\newcommand{\tor}{\mathrm{Tor}}
+\DeclareMathOperator{\coker}{\mathrm{coker}}
+
+% UMN REU 
+\newcommand{\hilb}{\mathrm{Hilb}}
+\newcommand{\chow}{\mathrm{Chow}}
 
 % Trigonometry
 \DeclareMathOperator{\arcsec}{\mathrm{arcsec}}
