@@ -1,11 +1,17 @@
 \ProvidesPackage{blubase}[2022/02/14]
 
+\newif\ifbirdbeamer     \birdbeamerfalse
+\DeclareOption{beaming}{\birdbeamertrue}
+\ProcessOptions\relax
+
 \usepackage{amsmath, amssymb, amsthm, amsfonts}
 \usepackage{mathtools}
 \usepackage{nccmath}
 \usepackage{array}
 \usepackage{float}
-\usepackage{enumitem}
+\ifbirdbeamer\else
+  \usepackage{enumitem}
+\fi
 \usepackage{makecell}
 \usepackage{accents}
 \usepackage{algorithm}
@@ -15,6 +21,7 @@
 \usepackage{stmaryrd} % oxford brackets
 \usepackage{bbm} % blackboard numbers
 \usepackage{ytableau} % young tableaux
+%\usepackage[bb=libus]{mathalpha} % blackboard lowercase
 
 % graphics
 \usepackage[inline]{asymptote} % preferred for oly geo
@@ -107,6 +114,7 @@
 \newcommand{\pto}{\rightharpoonup}
 \newcommand{\minor}{\prec}
 \newcommand{\major}{\succ}
+\newcommand{\KK}{\mathbb K}
 
 % Complex
 \DeclareMathOperator*{\argmax}{argmax}
@@ -305,6 +313,8 @@
 \newcommand{\tnvs}{\pitchfork} % transverse 
 \DeclareMathOperator{\codim}{\mathrm{codim}}
 \newcommand{\Fr}{\mathrm{Fr}} % frames
+\newcommand{\Diff}{\mathrm{Diff}} % diffeomorphisms
+\newcommand{\Symp}{\mathrm{Symp}} % symplectomorphisms
 
 % Semantics/Programming Languages
 \newcommand{\oxbrace}[1]{\left\llbracket#1\right\rrbracket}
@@ -324,6 +334,9 @@
 \newcommand{\ext}{\mathrm{Ext}}
 \newcommand{\tor}{\mathrm{Tor}}
 \DeclareMathOperator{\coker}{\mathrm{coker}}
+\DeclareMathOperator{\coim}{\mathrm{coim}}
+\newcommand{\cone}{\mathrm{Cone}}
+\newcommand{\cyl}{\mathrm{Cyl}}
 
 % UMN REU 
 \newcommand{\hilb}{\mathrm{Hilb}}

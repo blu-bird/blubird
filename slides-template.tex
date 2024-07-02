@@ -8,6 +8,7 @@
 \usepackage{blubase}
 \usepackage{multicol}
 \usepackage{thmtools}
+
 % theorem environments
 \theoremstyle{plain}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -19,8 +20,7 @@
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
 \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
 
-\renewcommand{\mod}[2]{\equiv#1\ \left(\textup{mod }#2\right)}
-
+% define and set colors
 \xdefinecolor{dred}{RGB}{90,0,0}
 \xdefinecolor{lred}{RGB}{255,240,230}
 \setbeamercolor{upperr}{fg=white,bg=dred}
@@ -30,6 +30,7 @@
 \setbeamercolor{upperg}{fg=white,bg=dgreen}
 \setbeamercolor{lowerg}{fg=black,bg=lgreen}
 
+% defining columns
 %\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 \newcolumntype{N}{@{}m{0pt}@{}}
 
