@@ -1,4 +1,4 @@
-\ProvidesPackage{blubase}[2022/02/14]
+\ProvidesPackage{blubase}[2024/07/12]
 
 \newif\ifbirdbeamer     \birdbeamerfalse
 \DeclareOption{beaming}{\birdbeamertrue}
@@ -60,6 +60,7 @@
 \newcommand{\vocab}[1]{\textbf{\color{blue}\boldmath #1}}
 \newcommand{\ol}[1]{\overline{#1}}
 \newcommand{\ul}[1]{\underline{#1}}
+\renewcommand{\bf}[1]{\mathbf{#1}}
 
 % Syntactically-named delimiters	
 \newcommand{\braces}[1]{\left\{ #1 \right\}}	
@@ -105,6 +106,7 @@
 \newcommand{\HH}{\mathbb H}
 \newcommand{\GG}{\mathbb G} %PUMaC 2018 Power
 \newcommand{\GGtil}{\Tilde{\mathbb G}} %PUMaC 2018 Power
+\newcommand{\KK}{\mathbb K}
 \newcommand{\II}{\mathbb I}
 \newcommand{\TT}{\mathbb T}
 \newcommand{\id}{\mathrm{id}}
@@ -114,7 +116,9 @@
 \newcommand{\pto}{\rightharpoonup}
 \newcommand{\minor}{\prec}
 \newcommand{\major}{\succ}
-\newcommand{\KK}{\mathbb K}
+\newcommand{\covs}{\gtrdot}
+\newcommand{\covby}{\lessdot}
+\newcommand{\const}[1]{\mathrm{const}_{#1}}
 
 % Complex
 \DeclareMathOperator*{\argmax}{argmax}
@@ -125,6 +129,11 @@
 \newcommand{\conj}[1]{\ol{#1}}
 \DeclareMathOperator*{\Arg}{Arg}
 \DeclareMathOperator*{\Log}{Log}
+
+% Topology
+\newcommand{\inter}[1]{\accentset{\circ}{#1}} %interior	
+\newcommand{\closu}[1]{\overline{#1}} %closure	
+\newcommand{\bound}{\partial} %boundary	
 
 % Combinatorics / Statistics
 \newcommand{\EE}{\mathbb E}
@@ -150,10 +159,15 @@
 \newcommand{\expval}[1]{\left\langle #1 \right\rangle}
 \newcommand{\snb}[2]{\left(\binom{#1}{#2}\right)}
 \newcommand{\tsnb}[2]{(\binom{#1}{#2})}
-\newcommand{\covs}{\gtrdot}
-\newcommand{\covby}{\lessdot}
+\newcommand{\multexp}[1]{\mathcal{I}_{#1}}
+\newcommand{\permset}{\mathrm{Perm}}
+
+% Algebraic Combinatorics
 \newcommand{\del}{\mathrm{del}}
 \newcommand{\link}{\mathrm{link}}
+\DeclareMathOperator{\schur}{Schur}
+\newcommand{\hilb}{\mathrm{Hilb}}
+\newcommand{\chow}{\mathrm{Chow}}
 
 % Geometry
 \newcommand{\dg}{^\circ}
@@ -161,27 +175,32 @@
 \newcommand{\ray}[1]{\overrightarrow{#1}}
 \newcommand{\dang}{\measuredangle}
 
+% Trigonometry
+\DeclareMathOperator{\arcsec}{\mathrm{arcsec}}
+\DeclareMathOperator{\arccot}{\mathrm{arccot}}
+\DeclareMathOperator{\arccsc}{\mathrm{arccsc}}
+\DeclareMathOperator{\sinc}{\mathrm{sinc}}
+\DeclareMathOperator{\sech}{\mathrm{sech}}
+\DeclareMathOperator{\csch}{\mathrm{csch}}
+\DeclareMathOperator{\arctanh}{\mathrm{arctanh}}
+\DeclareMathOperator{\Arcsin}{Arcsin}
+\DeclareMathOperator{\Arccos}{Arccos}
+\DeclareMathOperator{\Arctan}{Arctan}
+\DeclareMathOperator{\Arcsec}{Arcsec}
+\DeclareMathOperator{\Arccot}{Arccot}
+\DeclareMathOperator{\Arccsc}{Arccsc}
+
 % Number Theory
 \newcommand{\Mod}[1]{\ (\text{mod}\ #1)}
 \renewcommand{\mod}[1]{\ \text{mod}\ #1}
 \DeclareMathOperator*{\lcm}{lcm}
 \newcommand{\vp}[1]{\nu_{#1}}
 
-% MATH 2230 Notation
-% Chapter 1
+% Linear Algebra
 \newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
 \newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}	
 \newcommand{\tbmat}[1]{\begin{bsmallmatrix}#1\end{bsmallmatrix}}
 \newcommand{\tpmat}[1]{\begin{psmallmatrix}#1\end{psmallmatrix}}
-\newcommand{\inter}[1]{\accentset{\circ}{#1}} %interior	
-\newcommand{\closu}[1]{\overline{#1}} %closure	
-\newcommand{\bound}{\partial} %boundary	
-\newcommand{\pop}[1]{\partial_{#1}}	
-\newcommand{\jacob}[1]{\left[\mathcal{J}#1\right]}	
-\newcommand{\deriv}[1]{\left[\mathcal{D}#1\right]}
-\renewcommand{\bf}[1]{\mathbf{#1}}
-
-% Chapter 2
 \newenvironment{apmatrix}[1]{%
   \left(\begin{array}{@{}*{#1}{c}|c@{}}
 }{%
@@ -210,39 +229,12 @@
 }	
 \newcommand{\dpmat}[2]{\begin{dpmatrix}{#1} #2 \end{dpmatrix}}	
 \newcommand{\dbmat}[2]{\begin{dbmatrix}{#1} #2 \end{dbmatrix}} 
-
-% Chapter 3
 \newcommand{\mat}{\mathrm{Mat}}
-\newcommand{\multexp}[1]{\mathcal{I}_{#1}}
-\newcommand{\taylorone}[3]{p^{#2}_{#1 , #3}}
-\newcommand{\taylor}[3]{P^{#2}_{#1 , #3}}
 \DeclareMathOperator{\tr}{tr}
-
-% Chapter 4
-\newcommand{\ind}[1]{\bf{1}_{#1}}
-\newcommand{\vol}{\mathrm{vol}}
-\newcommand{\dpav}[1]{\mathcal{D}_{#1}}
-\newcommand{\dvol}[2]{\abs{d^{#1}\bf{#2}}}
-\DeclareMathOperator{\sgn}{sgn}
-\DeclareMathOperator{\sign}{sign}
-\DeclareMathOperator{\supp}{supp}
-
-% Chapter 5
-\newcommand{\area}{\text{area}}
-\newcommand{\hausd}[1]{\mathcal{H}^{#1}}
-\newcommand{\dmanvol}[1]{\sqrt{\det\left({#1}^\top {#1}\right)}}
-
-% Chapter 6
-\newcommand{\baset}{\mathcal{B}}
-\newcommand{\extd}{\bf{d}}
-\newcommand{\permset}{\mathrm{Perm}}
-
-% Recitation Presentations
 \newcommand{\innerproduct}[2]{\left\langle #1, #2 \right\rangle}
 \newcommand{\ip}[2]{\innerproduct{#1}{#2}}
-
-% Symmetric Polynomials (MATH 4420)
-\DeclareMathOperator{\schur}{Schur}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\sign}{sign}
 
 % Calculus
 \newcommand{\dv}[2]{\frac{d #1}{d #2}}
@@ -255,8 +247,23 @@
 \newcommand{\pdvc}[3]{\left(\pdv{#1}{#2}\right)_{#3}}
 \newcommand{\idv}[2]{\frac{\delta #1}{d #2}}
 \newcommand{\idvc}[3]{\left(\idv{#1}{#2} \right)_{#3}}
+\newcommand{\pop}[1]{\partial_{#1}}	
+\newcommand{\jacob}[1]{\left[\mathcal{J}#1\right]}	
+\newcommand{\deriv}[1]{\left[\mathcal{D}#1\right]}
 
-% Operators
+% Analysis
+\newcommand{\taylorone}[3]{p^{#2}_{#1 , #3}}
+\newcommand{\taylor}[3]{P^{#2}_{#1 , #3}}
+\newcommand{\ind}[1]{\bf{1}_{#1}}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\dpav}[1]{\mathcal{D}_{#1}}
+\newcommand{\dvol}[2]{\abs{d^{#1}\bf{#2}}}
+\DeclareMathOperator{\supp}{supp}
+\newcommand{\area}{\text{area}}
+\newcommand{\hausd}[1]{\mathcal{H}^{#1}}
+\newcommand{\dmanvol}[1]{\sqrt{\det\left({#1}^\top {#1}\right)}}
+
+% Differential Operators
 \newcommand{\divergence}[1]{\nabla \cdot #1}
 \renewcommand{\div}[1]{\divergence #1}
 \newcommand{\curl}[1]{\nabla \times #1}
@@ -283,6 +290,7 @@
 \newcommand{\orb}{\mathcal O}
 \DeclareMathOperator{\chr}{\mathrm{char}}
 \newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\cay}{\mathrm{Cay}}
 
 % Matrix Groups/Lie Algebras
 \newcommand{\aff}{\mathrm{Aff}}
@@ -315,6 +323,8 @@
 \newcommand{\Fr}{\mathrm{Fr}} % frames
 \newcommand{\Diff}{\mathrm{Diff}} % diffeomorphisms
 \newcommand{\Symp}{\mathrm{Symp}} % symplectomorphisms
+\newcommand{\extd}{\bf{d}}
+\newcommand{\baset}{\mathcal{B}} % basis vectors
 
 % Semantics/Programming Languages
 \newcommand{\oxbrace}[1]{\left\llbracket#1\right\rrbracket}
@@ -326,8 +336,6 @@
 
 % Algebraic Topology 
 \newcommand{\htpy}{\simeq}
-\newcommand{\const}[1]{\mathrm{const}_{#1}}
-\newcommand{\cay}{\mathrm{Cay}}
 \newcommand{\cupp}{\smallsmile}
 
 % Homological Algebra
@@ -338,27 +346,8 @@
 \newcommand{\cone}{\mathrm{Cone}}
 \newcommand{\cyl}{\mathrm{Cyl}}
 
-% UMN REU 
-\newcommand{\hilb}{\mathrm{Hilb}}
-\newcommand{\chow}{\mathrm{Chow}}
-
-% Trigonometry
-\DeclareMathOperator{\arcsec}{\mathrm{arcsec}}
-\DeclareMathOperator{\arccot}{\mathrm{arccot}}
-\DeclareMathOperator{\arccsc}{\mathrm{arccsc}}
-\DeclareMathOperator{\sinc}{\mathrm{sinc}}
-\DeclareMathOperator{\sech}{\mathrm{sech}}
-\DeclareMathOperator{\csch}{\mathrm{csch}}
-\DeclareMathOperator{\arctanh}{\mathrm{arctanh}}
-\DeclareMathOperator{\Arcsin}{Arcsin}
-\DeclareMathOperator{\Arccos}{Arccos}
-\DeclareMathOperator{\Arctan}{Arctan}
-\DeclareMathOperator{\Arcsec}{Arcsec}
-\DeclareMathOperator{\Arccot}{Arccot}
-\DeclareMathOperator{\Arccsc}{Arccsc}
-
 % Physics
-%\renewcommand{\hat}{\mathbf}
+% \renewcommand{\hat}{\mathbf}
 \newcommand{\lvec}[1]{\overrightarrow{#1}}
 \newcommand{\vect}[1]{\vec{\bf{#1}}} % for heathens only
 \newcommand{\hatt}[1]{\hat{\bf{#1}}} % also for heathens only
@@ -380,7 +369,7 @@
 \newcommand{\fourvec}[4]{\bmat{#1 \\ #2 \\ #3 \\ #4}}
 \newcommand{\twovec}[2]{\bmat{#1 \\ #2}}
 
-%Dirac Notation
+% Dirac Notation
 \newcommand{\ket}[1]{\left| #1 \right\rangle}
 \newcommand{\bra}[1]{\left\langle #1 \right|}
 \newcommand{\innerproductd}[2]{\left\langle #1 \middle| #2 \right\rangle}
@@ -399,7 +388,7 @@
 \newcommand{\checknextargP}{\@ifnextchar\bgroup{\gobblenextargP}}
 \newcommand{\gobblenextargP}[1]{, \ket{#1}\@ifnextchar\bgroup{\gobblenextargP}}
 
-%Commutators
+% Commutators
 \newcommand{\commutator}[2]{\left[#1, #2\right]}
 \newcommand{\comm}[2]{\commutator{#1}{#2}}
 \newcommand{\anticommutator}[2]{\left{#1, #2\right}}
