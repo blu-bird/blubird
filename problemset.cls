@@ -21,7 +21,7 @@
 \newtheorem{proposition}{Proposition}
 \newtheorem{defn}{Definition}
 \newtheorem{Conjecture}{Conjecture}
-\newtheorem{claim}{Claim}
+\newtheorem*{claim}{Claim}
 \newtheorem{property}{Property}
 \newtheorem*{sketch}{Sketch}
 \newtheorem{remark}{Remark}

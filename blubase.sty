@@ -19,13 +19,16 @@
 \usepackage{bm} % for categories
 \usepackage{mathpartir}
 \usepackage{stmaryrd} % oxford brackets
-\usepackage{bbm} % blackboard numbers
 \usepackage{ytableau} % young tableaux
+\DeclareMathAlphabet{\numbb}{U}{BOONDOX-ds}{m}{n}
+%\usepackage{bbm} % blackboard numbers
 %\usepackage[bb=libus]{mathalpha} % blackboard lowercase
 
 % graphics
 \usepackage[inline]{asymptote} % preferred for oly geo
 \usepackage{tikz-cd} % for categories
+\usepackage{tikz} 
+\usepackage{environ} % for pipe dreams
 
 \usepackage{graphicx}
 \usepackage{subcaption}
@@ -51,6 +54,7 @@
 \newcommand{\ds}{\displaystyle}
 \newcommand{\mfk}[1]{\mathfrak{#1}}
 \newcommand{\msc}[1]{\mathscr{#1}}
+\newcommand{\ud}[1]{\rotatebox[origin=c]{180}{#1}}
 
 % Emphasizing
 \newcommand{\tbf}[1]{\textbf{#1}}
@@ -80,6 +84,7 @@
 \newcommand{\size}[1]{\verts{#1}}	
 \newcommand{\norm}[1]{\Verts{#1}}	
 \newcommand{\tuple}[1]{\angles{#1}}
+\newcommand{\idl}[1]{\angles{#1}}
 
 % Symbols
 \newcommand{\eps}{\varepsilon}
@@ -102,13 +107,19 @@
 \newcommand{\ZZ}{\mathbb Z}
 \newcommand{\QQ}{\mathbb Q}
 \newcommand{\RR}{\mathbb R}
+\newcommand{\bbA}{\mathbb A}
 \newcommand{\CC}{\mathbb C}
 \newcommand{\HH}{\mathbb H}
 \newcommand{\GG}{\mathbb G} %PUMaC 2018 Power
 \newcommand{\GGtil}{\Tilde{\mathbb G}} %PUMaC 2018 Power
 \newcommand{\KK}{\mathbb K}
+\newcommand{\kk}{\Bbbk}
 \newcommand{\II}{\mathbb I}
 \newcommand{\TT}{\mathbb T}
+\newcommand{\cOO}{\mathcal O}
+\newcommand{\cBB}{\mathcal B}
+\newcommand{\cPP}{\mathcal P}
+\newcommand{\cSS}{\mathcal S}
 \newcommand{\id}{\mathrm{id}}
 \newcommand{\ev}{\mathrm{ev}}
 \newcommand{\codom}{\mathrm{codom}}
@@ -119,6 +130,8 @@
 \newcommand{\covs}{\gtrdot}
 \newcommand{\covby}{\lessdot}
 \newcommand{\const}[1]{\mathrm{const}_{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mb}[1]{\mathbb{#1}}
 
 % Complex
 \DeclareMathOperator*{\argmax}{argmax}
@@ -161,6 +174,10 @@
 \newcommand{\tsnb}[2]{(\binom{#1}{#2})}
 \newcommand{\multexp}[1]{\mathcal{I}_{#1}}
 \newcommand{\permset}{\mathrm{Perm}}
+\newcommand{\inv}{\mathrm{inv}}
+\newcommand{\coinv}{\mathrm{coinv}}
+\newcommand{\Inv}{\mathrm{Inv}}
+\newcommand{\wt}{\mathrm{wt}} 
 
 % Algebraic Combinatorics
 \newcommand{\del}{\mathrm{del}}
@@ -168,6 +185,37 @@
 \DeclareMathOperator{\schur}{Schur}
 \newcommand{\hilb}{\mathrm{Hilb}}
 \newcommand{\chow}{\mathrm{Chow}}
+\newcommand{\ydiagset}{\yableausetup{mathmode, aligntableaux=center,boxsize=0.5em}}
+\newcommand{\ytabset}{\ytableausetup{mathmode, aligntableaux=center,boxsize=1.3em}}
+\newcommand{\ytabloidset}{\ytableausetup{mathmode, aligntableaux=center,
+boxsize=1em, tabloids}}
+
+%% Pipe Dreams
+\NewEnviron{mosaic}[2][]{\begin{tikzpicture}[baseline]\def\tilesize{#2}\matrix[mosai,ampersand replacement=\&, #1]{\BODY};\end{tikzpicture}}
+
+\newcommand{\cspace}{.1} % spacing for crossings
+\newcommand{\tileedge}{.05pt} % thickness of tile edge. Does not scale.
+\newcommand{\knotthickness}{1.5pt} % thickness of knot for 1cm tile. Scales with tile size.
+
+\newcommand{\tileo}{\tikz \draw[tilestyle] (0,0) rectangle (\tilesize,\tilesize);}
+\newcommand{\tilei}[1][{}]{\tikz {\draw[tilestyle] (0,0) rectangle (\tilesize,\tilesize); \draw[#1,knotstyle={\tilesize*\knotthickness}] (0,.5*\tilesize) to[out=0, in=90] (.5*\tilesize,0);}}
+\newcommand{\tileii}[1][{}]{\tikz {\draw[tilestyle] (0,0) rectangle (\tilesize,\tilesize); \draw[#1,knotstyle={\tilesize*\knotthickness}] (\tilesize,.5*\tilesize) to[out=180, in=90] (.5*\tilesize,0);}}
+\newcommand{\tileiii}[1][{}]{\tikz {\draw[tilestyle] (0,0) rectangle (\tilesize,\tilesize); \draw[#1,knotstyle={\tilesize*\knotthickness}] (\tilesize,.5*\tilesize) to[out=180, in=-90] (.5*\tilesize,\tilesize);}}
+\newcommand{\tileiv}[1][{}]{\tikz {\draw[tilestyle] (0,0) rectangle (\tilesize,\tilesize); \draw[#1,knotstyle={\tilesize*\knotthickness}] (0,.5*\tilesize) to[out=0, in=-90] (.5*\tilesize,\tilesize);}}
+\newcommand{\tilev}[1][{}]{\tikz {\draw[tilestyle] (0,0) rectangle (\tilesize,\tilesize); \draw[#1,knotstyle={\tilesize*\knotthickness}] (0,.5*\tilesize) to (\tilesize,.5*\tilesize);}}
+\newcommand{\tilevi}[1][{}]{\tikz {\draw[tilestyle] (0,0) rectangle (\tilesize,\tilesize); \draw[#1,knotstyle={\tilesize*\knotthickness}] (.5*\tilesize,0) to (.5*\tilesize,\tilesize);}}
+\newcommand{\tilevii}[1][{}]{\tikz {\draw[tilestyle] (0,0) rectangle (\tilesize,\tilesize); \draw[#1,knotstyle={\tilesize*\knotthickness}] (0,.5*\tilesize) to[out=0, in=90] (.5*\tilesize,0); \draw[#1,knotstyle={\tilesize*\knotthickness}] (\tilesize,.5*\tilesize) to[out=180, in=-90] (.5*\tilesize,\tilesize);}}
+\newcommand{\tileviii}[1][{}]{\tikz {\draw[tilestyle] (0,0) rectangle (\tilesize,\tilesize); \draw[#1,knotstyle={\tilesize*\knotthickness}] (\tilesize,.5*\tilesize) to[out=180, in=90] (.5*\tilesize,0); \draw[#1,knotstyle={\tilesize*\knotthickness}] (0,.5*\tilesize) to[out=0, in=-90] (.5*\tilesize,\tilesize);}}
+\newcommand{\tileix}[1][{}]{\tikz {\draw[tilestyle] (0,0) rectangle (\tilesize,\tilesize); \draw[#1,knotstyle={\tilesize*\knotthickness}] (0,.5*\tilesize) to (\tilesize,.5*\tilesize); \draw[#1,knotstyle={\tilesize*\knotthickness}] (.5*\tilesize,0) to (.5*\tilesize,.5*\tilesize-\tilesize*\cspace); \draw[#1,knotstyle={\tilesize*\knotthickness}] (.5*\tilesize,.5*\tilesize+\tilesize*\cspace) to (.5*\tilesize,\tilesize);}}
+\newcommand{\tilex}[1][{}]{\tikz {\draw[tilestyle] (0,0) rectangle (\tilesize,\tilesize); \draw[#1,knotstyle={\tilesize*\knotthickness}] (.5*\tilesize,0) to (.5*\tilesize,\tilesize); \draw[#1,knotstyle={\tilesize*\knotthickness}] (0,.5*\tilesize) to (.5*\tilesize-\tilesize*\cspace,.5*\tilesize); \draw[#1,knotstyle={\tilesize*\knotthickness}] (.5*\tilesize+\tilesize*\cspace,.5*\tilesize) to (\tilesize,.5*\tilesize);}}
+\newcommand{\XT}[1][{}]{\tikz {\draw[tilestyle] (0,0) rectangle (\tilesize,\tilesize); \draw[#1,knotstyle={\tilesize*\knotthickness}] (.5*\tilesize,0) to (.5*\tilesize,\tilesize); \draw[#1,knotstyle={\tilesize*\knotthickness}] (0,.5*\tilesize) to (.5*\tilesize,.5*\tilesize); \draw[#1,knotstyle={\tilesize*\knotthickness}] (.5*\tilesize,.5*\tilesize) to (\tilesize,.5*\tilesize);}}
+
+\tikzset{tilestyle/.style={use as bounding box, line width=\tileedge}} % Add colors/styles here for tile edge and fill. Example: fill=gray!30 for light gray background
+\tikzset{knotstyle/.style={line width=#1}} % Add colors and other line styles here
+\tikzset{mosai/.style={execute at begin cell=\node\bgroup, execute at end cell=\egroup;, column sep={\tilesize cm,between origins}, row sep={\tilesize cm,between origins}, inner sep=0}}
+
+\newcommand{\BT}{\tileviii}
+
 
 % Geometry
 \newcommand{\dg}{^\circ}
@@ -235,6 +283,7 @@
 \newcommand{\ip}[2]{\innerproduct{#1}{#2}}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\adj}{\mathrm{adj}}
 
 % Calculus
 \newcommand{\dv}[2]{\frac{d #1}{d #2}}
@@ -270,7 +319,7 @@
 \newcommand{\gradient}[1]{\nabla #1}
 \newcommand{\grad}[1]{\gradient #1}
 \newcommand{\laplacian}[1]{\nabla^2 #1}
-\newcommand{\adj}[1]{#1^{\dagger}}
+\newcommand{\hadj}[1]{#1^{\dagger}}
 \DeclareMathOperator{\tcurl}{\operatorname{curl}}
 \DeclareMathOperator{\tdiv}{\operatorname{div}}
 \DeclareMathOperator{\tgrad}{\operatorname{grad}}
@@ -279,10 +328,10 @@
 \DeclareMathOperator{\ord}{ord}
 \newcommand{\iso}{\cong}
 \newcommand{\nsub}{\trianglelefteq}
-\newcommand{\aut}[1]{\mathrm{Aut}\parens{#1}}
-\newcommand{\inn}[1]{\mathrm{Inn}\parens{#1}}
-\newcommand{\out}[1]{\mathrm{Out}\parens{#1}}
-\newcommand{\edom}{\mathrm{End}}
+\newcommand{\aut}{\mathrm{Aut}}
+\newcommand{\inn}{\mathrm{Inn}}
+\newcommand{\out}{\mathrm{Out}}
+\DeclareMathOperator{\edom}{\mathrm{End}}
 \newcommand{\ann}{\mathrm{Ann}}
 \newcommand{\sym}{\mathrm{sym}}
 \newcommand{\actson}{\curvearrowright}
@@ -291,6 +340,23 @@
 \DeclareMathOperator{\chr}{\mathrm{char}}
 \newcommand{\Hom}{\mathrm{Hom}}
 \newcommand{\cay}{\mathrm{Cay}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\Gal}{\mathrm{Gal}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\Nm}{\mathrm{N}}
+
+% Group Cohomology
+\newcommand{\Res}{\mathrm{Res}}
+\newcommand{\Cor}{\mathrm{Cor}}
+\newcommand{\Inf}{\mathrm{Inf}}
+
+% Commutative Algebra/Algebraic Geometry
+\DeclareMathOperator{\hit}{\mathrm{ht}}
+\DeclareMathOperator{\trdeg}{\mathrm{trdeg}}
+\newcommand{\Frac}{\mathrm{Frac}}
+\newcommand{\ratto}{\dashrightarrow}
+\DeclareMathOperator{\spec}{\mathrm{Spec}}
+\DeclareMathOperator{\proj}{\mathrm{Proj}}
 
 % Matrix Groups/Lie Algebras
 \newcommand{\aff}{\mathrm{Aff}}
@@ -333,6 +399,7 @@
 \newcommand{\cat}[1]{\textbf{#1}}
 \newcommand{\opp}[1]{{#1}^{\mathsf{op}}}
 \newcommand{\ad}{\mathrm{ad}}
+\DeclareMathOperator{\Rep}{\cat{Rep}}
 
 % Algebraic Topology 
 \newcommand{\htpy}{\simeq}
@@ -343,8 +410,8 @@
 \newcommand{\tor}{\mathrm{Tor}}
 \DeclareMathOperator{\coker}{\mathrm{coker}}
 \DeclareMathOperator{\coim}{\mathrm{coim}}
-\newcommand{\cone}{\mathrm{Cone}}
-\newcommand{\cyl}{\mathrm{Cyl}}
+\newcommand{\cone}{\mathrm{cone}}
+\newcommand{\cyl}{\mathrm{cyl}}
 
 % Physics
 % \renewcommand{\hat}{\mathbf}
@@ -381,10 +448,10 @@
 \newcommand{\dyad}[2]{\outerproduct{#1}{#2}}
 \newcommand{\op}[2]{\outerproduct{#1}{#2}}
 \newcommand{\ketbra}[2]{\outerproduct{#1}{#2}}
-\newcommand{\proj}[2]{\text{proj}_{\ket{#1}} \ket{#2}}
-\newcommand{\projop}[1]{P_{\ket{#1}}}
+\newcommand{\pr}[2]{\text{proj}_{\ket{#1}} \ket{#2}}
+\newcommand{\prop}[1]{P_{\ket{#1}}}
 \makeatletter
-\newcommand{\projopset}[2]{P_{\{\ket{#1}, \ket{#2}\checknextargP\}}}
+\newcommand{\propset}[2]{P_{\{\ket{#1}, \ket{#2}\checknextargP\}}}
 \newcommand{\checknextargP}{\@ifnextchar\bgroup{\gobblenextargP}}
 \newcommand{\gobblenextargP}[1]{, \ket{#1}\@ifnextchar\bgroup{\gobblenextargP}}
 
