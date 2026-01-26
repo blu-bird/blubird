@@ -58,6 +58,7 @@
 
 % Emphasizing
 \newcommand{\tbf}[1]{\textbf{#1}}
+\newcommand{\mbf}[1]{\mathbf{#1}}
 \newcommand{\tit}[1]{\textit{#1}}
 \newcommand{\ttt}[1]{\texttt{#1}}
 \newcommand{\mt}[1]{\text{#1}}
@@ -134,6 +135,7 @@
 \newcommand{\const}[1]{\mathrm{const}_{#1}}
 \newcommand{\mc}[1]{\mathcal{#1}}
 \newcommand{\mb}[1]{\mathbb{#1}}
+\newcommand{\eev}{\wedge}
 
 % Complex
 \DeclareMathOperator*{\argmax}{argmax}
@@ -186,7 +188,7 @@
 \newcommand{\wt}{\mathrm{wt}} 
 
 % Polytopes
-\newcommand{\conv}{\mathrm{conv}}
+\DeclareMathOperator{\conv}{\mathrm{conv}}
 
 % Algebraic Combinatorics
 \newcommand{\del}{\mathrm{del}}
@@ -367,9 +369,12 @@ boxsize=1em, tabloids}}
 \DeclareMathOperator{\spec}{\mathrm{Spec}}
 \DeclareMathOperator{\proj}{\mathrm{Proj}}
 \DeclareMathOperator{\Cl}{\mathrm{Cl}}
+\DeclareMathOperator{\CaCl}{\mathrm{CaCl}}
 \DeclareMathOperator{\Pic}{\mathrm{Pic}}
 \newcommand{\pdiv}{\mathrm{div}}
 \newcommand{\Div}{\mathrm{Div}}
+\newcommand{\CDiv}{\mathrm{CDiv}}
+\DeclareMathOperator{\rad}{\mathrm{rad}}
 
 % Matrix Groups/Lie Algebras
 \newcommand{\aff}{\mathrm{Aff}}
