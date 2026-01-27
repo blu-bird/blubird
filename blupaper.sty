@@ -157,6 +157,11 @@
 	bodyfont = \normalfont
 ]{plain}
 
+\declaretheoremstyle[
+  bodyfont = \normalfont,
+  qed = $\lozenge$
+]{example}
+
 \newcommand{\boxhack}{~\vspace{-2em}}
 
 % THEOREM STYLES - need some love
@@ -181,7 +186,7 @@ sibling = definition]{theorem}
 \declaretheorem[style = plain, name = Claim, numberwithin = theorem]{claim}
 	
 \declaretheorem[style = exbox, name = Example, sibling = theorem]{example}
-\declaretheorem[style = plain, name = Example, sibling = theorem]{pexample}
+\declaretheorem[style = example, name = Example, sibling = theorem]{pexample}
 \declaretheorem[style = exbox, name = Example, numbered = no]{example*}
 \declaretheorem[style = plain, name = Definition, numberwithin=section,
 sibling = definition]{pdefinition}
